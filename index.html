@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Varnika Handlooms</title>
+
+  <style>
+    /* ----- Global Styles ----- */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #FAF7F2;
+      color: #333;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      color: #7C0A02;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ----- Navbar ----- */
+    header {
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #7C0A02;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #D4AF37;
+    }
+
+    .btn {
+      background-color: #7C0A02;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      background-color: #D4AF37;
+      color: #7C0A02;
+    }
+
+    /* ----- Hero Section ----- */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1606813902734-9d9e62e1c029?auto=format&fit=crop&w=1200&q=60') center/cover no-repeat;
+      height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      color: white;
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+
+    .hero h1, .hero p, .hero a {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    /* ----- About Section ----- */
+    .about {
+      padding: 4rem 10%;
+      text-align: center;
+    }
+
+    .about img {
+      max-width: 500px;
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 2rem;
+    }
+
+    /* ----- Collections ----- */
+    .collections {
+      background: #fff;
+      padding: 4rem 10%;
+      text-align: center;
+    }
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: #FAF7F2;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 1rem;
+    }
+
+    /* ----- Testimonials ----- */
+    .testimonials {
+      background: #7C0A02;
+      color: #fff;
+      padding: 4rem 10%;
+      text-align: center;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial {
+      background: rgba(255,255,255,0.1);
+      padding: 1.5rem;
+      border-radius: 8px;
+      font-style: italic;
+    }
+
+    /* ----- Contact ----- */
+    .contact {
+      padding: 4rem 10%;
+      text-align: center;
+    }
+
+    .contact form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact input, .contact textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .contact button {
+      background-color: #7C0A02;
+      color: white;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact button:hover {
+      background-color: #D4AF37;
+      color: #7C0A02;
+    }
+
+    /* ----- Footer ----- */
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+    }
+  </style>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Varnika Handlooms</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Collections</a>
+      <a href="#">Story</a>
+      <a href="#">Contact</a>
+    </nav>
+    <a href="#" class="btn">Shop Now</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Weaving Elegance, One Thread at a Time</h1>
+    <p>Discover handcrafted sarees that celebrate tradition with a modern touch.</p>
+    <a href="#" class="btn">Explore Collection</a>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <h2>About Us</h2>
+    <p>
+      At <strong>Varnika Handlooms</strong>, every saree tells a story — woven with dedication, colored with culture, and finished with grace.  
+      We bring you authentic handloom creations crafted by skilled Indian artisans.
+    </p>
+    <img src="https://images.unsplash.com/photo-1622308644421-1c1a7ac24a5e?auto=format&fit=crop&w=1000&q=60" alt="Handloom Weaving">
+  </section>
+
+  <!-- Collections -->
+  <section class="collections">
+    <h2>Our Collections</h2>
+    <div class="collection-grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1610030469576-9d4a90cb6ed6?auto=format&fit=crop&w=800&q=60" alt="Banarasi Saree">
+        <h3>Banarasi Elegance</h3>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1601039839993-2b16878b6c54?auto=format&fit=crop&w=800&q=60" alt="Kanchipuram Saree">
+        <h3>Kanchipuram Classics</h3>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1591012911207-c8c9e87cb3b7?auto=format&fit=crop&w=800&q=60" alt="Linen Saree">
+        <h3>Linen Grace</h3>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1581515287592-1b84c913f9b0?auto=format&fit=crop&w=800&q=60" alt="Cotton Saree">
+        <h3>Cotton Comforts</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        “Absolutely loved my saree! The fabric feels so rich and authentic.”  
+        <br>— <strong>Priya S.</strong>
+      </div>
+      <div class="testimonial">
+        “Elegant designs with a modern touch — perfect for festive wear.”  
+        <br>— <strong>Meera R.</strong>
+      </div>
+      <div class="testimonial">
+        “Varnika Handlooms revives true Indian craftsmanship beautifully.”  
+        <br>— <strong>Ananya P.</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact">
+    <h2>Get in Touch</h2>
+    <p>Have a query or want to place an order? Drop us a message!</p>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Varnika Handlooms. All Rights Reserved. | Follow us on Instagram & Facebook
+  </footer>
+
+</body>
+</html>
